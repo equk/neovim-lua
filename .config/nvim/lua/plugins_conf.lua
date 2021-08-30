@@ -75,8 +75,7 @@ qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new
 ---- setup telescope
 require('telescope').setup {
     defaults = {
-        vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column',
-                             '--smart-case'},
+        vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
         prompt_prefix = ">",
         initial_mode = "insert",
         selection_strategy = "reset",
@@ -85,7 +84,6 @@ require('telescope').setup {
         file_sorter = require'telescope.sorters'.get_fuzzy_file,
         file_ignore_patterns = {},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        path_display = "shorten",
         winblend = 0,
         layout_config = {
           prompt_position = "bottom",
