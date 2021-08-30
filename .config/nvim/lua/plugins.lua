@@ -21,8 +21,5 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'tjdevries/colorbuddy.nvim'
     use 'tjdevries/gruvbuddy.nvim'
-    use {
-        'lukas-reineke/indent-blankline.nvim',
-        branch = 'lua'
-    }
+    use 'lukas-reineke/indent-blankline.nvim'
 end)
