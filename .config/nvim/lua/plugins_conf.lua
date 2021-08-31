@@ -64,6 +64,10 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
   flags = {debounce_text_changes = 400}
 })
+---- use gopls as lsp source
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+})
 -- treesitter config
 ---- ***disabled for now***
 -- local ts = require 'nvim-treesitter.configs'
