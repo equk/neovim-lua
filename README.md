@@ -2,10 +2,27 @@
 
 Migrating neovim config to lua
 
-Testing neovim 0.5 nightly features
+Testing neovim 0.5 features
 
-Currently mainly tested / setup for `Rust` using Neovim LSP
+## Features
 
+- [x] Plugins Managed Using Packer
+- [x] ripgrep
+- [x] telescope
+- [x] Neovim LSP
+- [x] LSP + Snippet Autocomplete
+- [x] rust-analyzer lsp (Rust)
+- [x] gopls lsp (Golang)
+- [x] tsserver lsp (Typescript, Javascript)
+- [x] lightline with powerline colors
+
+## Extras
+
+- [x] Packer installer (https://github.com/tjdevries/config_manager)
+
+## Notes
+
+Currently have treesitter disabled due to performance
 
 ## TODO
 
