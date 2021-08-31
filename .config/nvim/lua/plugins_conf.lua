@@ -58,6 +58,12 @@ lspconfig.rust_analyzer.setup({
         }
     }
 })
+---- use typescript as lsp source
+lspconfig.tsserver.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {debounce_text_changes = 400}
+})
 -- treesitter config
 ---- ***disabled for now***
 -- local ts = require 'nvim-treesitter.configs'
