@@ -68,6 +68,30 @@ lspconfig.tsserver.setup({
 lspconfig.gopls.setup({
   on_attach = on_attach,
 })
+---- use sumneko lua lsp
+lspconfig.sumneko_lua.setup({
+  cmd = {
+    "/usr/bin/lua-language-server",
+    "-E",
+    "/main.lua",
+  },
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+      diagnostics = {
+        enable = true,
+        globals = {
+          "vim", "describe", "it", "before_each", "after_each",
+          "awesome", "theme", "client", "P",
+        },
+      },
+      workspace = {
+        preloadFileSize = 400,
+      },
+    },
+  },
+})
 -- treesitter config
 ---- ***disabled for now***
 -- local ts = require 'nvim-treesitter.configs'
