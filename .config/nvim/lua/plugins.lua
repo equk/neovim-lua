@@ -19,7 +19,10 @@ return require('packer').startup(function(use)
     use 'sirver/ultisnips'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
-    use 'tjdevries/colorbuddy.nvim'
-    use 'tjdevries/gruvbuddy.nvim'
+    -- use 'joshdick/onedark.vim'
+    -- use 'tjdevries/colorbuddy.nvim'
+    -- use 'tjdevries/gruvbuddy.nvim'
+    -- use 'haishanh/night-owl.vim'
+    use 'bluz71/vim-nightfly-guicolors'
     use 'lukas-reineke/indent-blankline.nvim'
 end)

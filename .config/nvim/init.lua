@@ -37,7 +37,8 @@ require 'plugins'
 -- load plugins config
 require 'plugins_conf'
 -- set colorscheme
-require('colorbuddy').colorscheme('gruvbuddy')
+-- require('colorbuddy').colorscheme('gruvbuddy')
+vim.cmd 'colorscheme nightfly'
 -- load keybindings
 require 'keybindings'
 --
