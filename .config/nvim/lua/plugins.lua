@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
     use 'jremmen/vim-ripgrep'
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
+    use 'steelsojka/completion-buffers'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/telescope.nvim'
