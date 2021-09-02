@@ -1,6 +1,7 @@
 -- equilibriumuk neovim 0.5 nightly config
 ----
 vim.g.mapleader = ','
+local vim = vim
 local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
@@ -25,9 +26,6 @@ o.expandtab = true
 wo.number = true
 wo.signcolumn = 'yes'
 wo.wrap = true
-local vim = vim
-local execute = vim.api.nvim_command
-local fn = vim.fn
 -- check plugin manager installed
 if require('check_packer')() then
     return
