@@ -10,20 +10,26 @@ return require('packer').startup(function(use)
     use 'itchyny/vim-gitbranch'
     use 'jiangmiao/auto-pairs'
     use 'jremmen/vim-ripgrep'
-    use 'neovim/nvim-lspconfig'
-    use 'nvim-lua/completion-nvim'
-    use 'steelsojka/completion-buffers'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/telescope.nvim'
+    ---- telescope
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = {
+        'nvim-lua/popup.nvim',
+        'nvim-lua/plenary.nvim',
+      }
+    }
+    ---- completion
+    use {
+      'nvim-lua/completion-nvim',
+      requires = {
+        'neovim/nvim-lspconfig',
+        'steelsojka/completion-buffers'
+      }
+    }
     use 'nvim-treesitter/nvim-treesitter'
     use 'sirver/ultisnips'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
-    -- use 'joshdick/onedark.vim'
-    -- use 'tjdevries/colorbuddy.nvim'
-    -- use 'tjdevries/gruvbuddy.nvim'
-    -- use 'haishanh/night-owl.vim'
     use 'bluz71/vim-nightfly-guicolors'
     use 'lukas-reineke/indent-blankline.nvim'
 end)
