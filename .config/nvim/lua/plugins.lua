@@ -26,7 +26,8 @@ return require('packer').startup(function(use)
         'steelsojka/completion-buffers'
       }
     }
-    use 'nvim-treesitter/nvim-treesitter'
+    -- use 'nvim-treesitter/nvim-treesitter'
+    ---- disabled treesitter for now
     use 'sirver/ultisnips'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
