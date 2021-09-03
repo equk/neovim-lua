@@ -1,28 +1,41 @@
--- equilibriumuk neovim 0.5 nightly config
 ----
+-- equilibriumuk neovim config
+----
+-- https://github.com/equk/dotfiles
+----
+
+-- map leader
 vim.g.mapleader = ','
+-- vim commands
 local vim = vim
 local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
+-- main neovim settings
 o.termguicolors = true
 o.syntax = 'on'
 o.errorbells = false
-o.smartcase = true
 o.showmode = false
 bo.swapfile = false
 o.backup = false
-o.undodir = vim.fn.stdpath('config') .. '/undodir'
 o.undofile = false
 o.incsearch = true
 o.hidden = true
+-- autocomplete options
 o.completeopt = 'menuone,noinsert,noselect'
+-- ignore case unless capital in search
+o.ignorecase = true
+o.smartcase = true
+-- indentation
 bo.autoindent = true
 bo.smartindent = true
-o.tabstop = 2
+o.tabstop = 8
 o.softtabstop = 2
 o.shiftwidth = 2
 o.expandtab = true
+-- enable cursorline
+wo.cursorline = true
+-- display line numbers
 wo.number = true
 wo.signcolumn = 'yes'
 wo.wrap = true
@@ -35,9 +48,7 @@ require 'plugins'
 -- load plugins config
 require 'plugins_conf'
 -- set colorscheme
-vim.cmd 'colorscheme nightfly'
+vim.cmd('colorscheme nightfly')
 -- load keybindings
 require 'keybindings'
---
----- references / sources
----- rust lsp https://sharksforarms.dev/posts/neovim-rust/
+----
