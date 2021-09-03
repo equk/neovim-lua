@@ -30,6 +30,10 @@ return require('packer').startup(function(use)
     use 'sirver/ultisnips'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
-    use 'bluz71/vim-nightfly-guicolors'
     use 'lukas-reineke/indent-blankline.nvim'
+    ---- colorschemes
+    -- main colorscheme
+    use 'bluz71/vim-nightfly-guicolors'
+    -- vimdiff colorscheme
+    use 'nanotech/jellybeans.vim'
 end)
