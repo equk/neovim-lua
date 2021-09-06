@@ -48,7 +48,7 @@ require 'plugins'
 -- load plugins config
 require 'plugins_conf'
 -- set colorscheme
-vim.cmd('colorscheme nightfly')
+vim.g.colors_name='nightfly'
 -- load keybindings
 require 'keybindings'
 ----
