@@ -18,11 +18,12 @@ return require('packer').startup(function(use)
         'nvim-lua/plenary.nvim',
       }
     }
+    ---- lsp
+    use 'neovim/nvim-lspconfig'
     ---- completion
     use {
       'nvim-lua/completion-nvim',
       requires = {
-        'neovim/nvim-lspconfig',
         'steelsojka/completion-buffers'
       }
     }
