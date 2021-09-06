@@ -1,7 +1,7 @@
 -- plugin specific config
 ---- (plugin keybinds in ./keybindings.lua)
 --
--- set lightline
+---- set lightline
 vim.g.lightline = {
     colorscheme = 'powerline',
     active = {
@@ -11,7 +11,7 @@ vim.g.lightline = {
         gitbranch = 'gitbranch#name'
     }
 }
--- lsp config
+---- lsp config
 local function setup_diagnostics()
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
@@ -20,14 +20,14 @@ local function setup_diagnostics()
         update_in_insert = true
     })
 end
--- load lspconfig
+---- load lspconfig
 local lspconfig = require 'lspconfig'
--- load completion
+---- load completion
 local completion = require 'completion'
 local on_attach = function(client)
     require'completion'.on_attach(client)
 end
--- completion config
+---- completion config
 vim.g.completion_matching_strategy_list = {'substring', 'exact', 'fuzzy', 'all'}
 vim.g.diagnostic_enable_virtual_text = 1
 vim.g.diagnostic_insert_delay = 1
@@ -38,7 +38,7 @@ vim.g.completion_chain_complete_list = {{
 }, {
     mode = '<c-n>'
 }}
----- include ultisnips in completion
+-- include ultisnips in completion
 vim.g.completion_enable_snippet = 'UltiSnips'
 ---- use rust-analyzer as lsp source
 lspconfig.rust_analyzer.setup({
