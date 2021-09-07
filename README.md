@@ -27,6 +27,7 @@ Currently have treesitter disabled due to performance
 ## TODO
 
 - [ ] linter on save (currently setup with ALE)
+- [ ] snippets integration with cmp
 
 
 ```
