@@ -22,9 +22,13 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     ---- completion
     use {
-      'nvim-lua/completion-nvim',
+      'hrsh7th/nvim-cmp',
       requires = {
-        'steelsojka/completion-buffers'
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-nvim-lua',
+        'hrsh7th/cmp-nvim-lsp',
+        'saadparwaiz1/cmp_luasnip',
       }
     }
     -- use 'nvim-treesitter/nvim-treesitter'

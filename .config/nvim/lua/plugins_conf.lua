@@ -12,37 +12,27 @@ vim.g.lightline = {
     }
 }
 ---- lsp config
-local function setup_diagnostics()
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        virtual_text = true,
-        signs = true,
-        update_in_insert = true
-    })
-end
----- load lspconfig
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+--- load lspconfig
 local lspconfig = require 'lspconfig'
 ---- load completion
-local completion = require 'completion'
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
+local cmp = require 'cmp'
+cmp.setup {
+  enabled = true,
+  min_length = 2,
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'nvim_lua' },
+    { name = 'path' },
+  },
+}
 ---- completion config
-vim.g.completion_matching_strategy_list = {'substring', 'exact', 'fuzzy', 'all'}
-vim.g.diagnostic_enable_virtual_text = 1
-vim.g.diagnostic_insert_delay = 1
-vim.g.completion_chain_complete_list = {{
-    complete_items = {'lsp', 'snippet', 'buffers'}
-}, {
-    mode = '<c-p>'
-}, {
-    mode = '<c-n>'
-}}
--- include ultisnips in completion
-vim.g.completion_enable_snippet = 'UltiSnips'
 ---- use rust-analyzer as lsp source
 lspconfig.rust_analyzer.setup({
-    on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         ["rust-analyzer"] = {
             assist = {
@@ -60,13 +50,12 @@ lspconfig.rust_analyzer.setup({
 })
 ---- use typescript as lsp source
 lspconfig.tsserver.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
   flags = {debounce_text_changes = 400}
 })
 ---- use gopls as lsp source
 lspconfig.gopls.setup({
-  on_attach = on_attach,
+  capabilities = capabilities,
 })
 ---- use sumneko lua lsp
 lspconfig.sumneko_lua.setup({
@@ -75,7 +64,8 @@ lspconfig.sumneko_lua.setup({
     "-E",
     "/main.lua",
   },
-  on_attach = on_attach,
+  -- capabilities = capabilities,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
