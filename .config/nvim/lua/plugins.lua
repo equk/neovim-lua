@@ -5,7 +5,6 @@ return require('packer').startup(function(use)
     -- load plugins
     use 'airblade/vim-gitgutter'
     use 'anott03/nvim-lspinstall'
-    use 'honza/vim-snippets'
     use 'itchyny/lightline.vim'
     use 'itchyny/vim-gitbranch'
     use 'jiangmiao/auto-pairs'
@@ -28,12 +27,14 @@ return require('packer').startup(function(use)
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-nvim-lsp',
-        'saadparwaiz1/cmp_luasnip',
       }
     }
+    ---- snippets
+    use 'rafamadriz/friendly-snippets'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
     -- use 'nvim-treesitter/nvim-treesitter'
     ---- disabled treesitter for now
-    use 'sirver/ultisnips'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
     use 'lukas-reineke/indent-blankline.nvim'

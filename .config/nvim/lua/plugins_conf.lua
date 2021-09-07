@@ -18,19 +18,35 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require 'lspconfig'
 ---- load completion
 local cmp = require 'cmp'
+---- completion config
 cmp.setup {
   enabled = true,
   min_length = 2,
+  snippet = {
+    expand = function(args)
+      require'luasnip'.lsp_expand(args.body)
+    end
+  },
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    })
+  },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
     { name = 'luasnip' },
     { name = 'nvim_lua' },
+    { name = 'buffer' },
     { name = 'path' },
   },
 }
----- completion config
----- use rust-analyzer as lsp source
+---- snippets
+-- use snippets from friendly-snippets
+local snip_loader = require 'luasnip/loaders/from_vscode'
+snip_loader.lazy_load()
+---- lsp sources
+-- [lsp] rust-analyzer
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
     settings = {
@@ -48,23 +64,22 @@ lspconfig.rust_analyzer.setup({
         }
     }
 })
----- use typescript as lsp source
+-- [lsp] typescript
 lspconfig.tsserver.setup({
   capabilities = capabilities,
   flags = {debounce_text_changes = 400}
 })
----- use gopls as lsp source
+-- [lsp] gopls
 lspconfig.gopls.setup({
   capabilities = capabilities,
 })
----- use sumneko lua lsp
+-- [lsp] sumneko lua
 lspconfig.sumneko_lua.setup({
   cmd = {
     "/usr/bin/lua-language-server",
     "-E",
     "/main.lua",
   },
-  -- capabilities = capabilities,
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -91,7 +106,7 @@ lspconfig.sumneko_lua.setup({
 --         enable = true
 --     }
 -- }
--- telescope config
+---- telescope config
 ---- use vim buffers for previews
 file_previewer = require'telescope.previewers'.vim_buffer_cat.new
 grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new
