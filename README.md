@@ -4,6 +4,10 @@ Migrating neovim config to lua
 
 Testing neovim 0.5 features
 
+## Screenshot
+
+![](./screenshot.png)
+
 ## Features
 
 - [x] Plugins Managed Using Packer
@@ -17,14 +21,11 @@ Testing neovim 0.5 features
 - [x] lightline with powerline colors
 - [x] snippets integration with cmp
 - [x] add language specific config for LSP (`Go`, `Javascript`, `TypeScript`, `Rust`, `lua`)
+- [x] treesitter for syntax highlighting
 
 ## Extras
 
 - [x] Packer installer (https://github.com/tjdevries/config_manager)
-
-## Notes
-
-Currently have treesitter disabled due to performance
 
 ## TODO
 
