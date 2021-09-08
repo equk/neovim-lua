@@ -33,7 +33,8 @@ return require('packer').startup(function(use)
     use 'rafamadriz/friendly-snippets'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
-    -- use 'nvim-treesitter/nvim-treesitter'
+    ---- treesitter
+    use 'nvim-treesitter/nvim-treesitter'
     ---- disabled treesitter for now
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'

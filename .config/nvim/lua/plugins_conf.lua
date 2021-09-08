@@ -98,20 +98,15 @@ lspconfig.sumneko_lua.setup({
   },
 })
 -- treesitter config
----- ***disabled for now***
--- local ts = require 'nvim-treesitter.configs'
--- ts.setup {
---     ensure_installed = 'maintained',
---     highlight = {
---         enable = true
---     }
--- }
+local ts = require 'nvim-treesitter.configs'
+ts.setup {
+  ensure_installed = 'maintained',
+  highlight = {
+    enable = true
+  }
+}
 ---- telescope config
----- use vim buffers for previews
-file_previewer = require'telescope.previewers'.vim_buffer_cat.new
-grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new
-qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new
----- setup telescope
+--- setup telescope
 require('telescope').setup {
     defaults = {
         vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
@@ -135,13 +130,6 @@ require('telescope').setup {
         use_less = true,
         set_env = {
             ['COLORTERM'] = 'truecolor'
-        }, -- def = nil,
-
-        file_previewer = file_previewer,
-        grep_previewer = grep_previewer,
-        qflist_previewer = qflist_previewer,
-
-        -- dev config
-        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
-    }
+        },
+   }
 }
