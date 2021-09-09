@@ -40,15 +40,15 @@ wo.number = true
 wo.signcolumn = 'yes'
 wo.wrap = true
 -- check plugin manager installed
-if require('check_packer')() then
-    return
+if require 'check_packer'() then
+  return
 end
 -- load plugins
 require 'plugins'
 -- load plugins config
 require 'plugins_conf'
 -- set colorscheme
-vim.g.colors_name='nightfly'
+vim.g.colors_name = 'nightfly'
 -- load keybindings
 require 'keybindings'
 ----
