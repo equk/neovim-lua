@@ -1,9 +1,9 @@
 -- keymapper function
 local key_mapper = function(mode, key, result)
-    vim.api.nvim_set_keymap(mode, key, result, {
-        noremap = true,
-        silent = true
-    })
+  vim.api.nvim_set_keymap(mode, key, result, {
+    noremap = true,
+    silent = true,
+  })
 end
 
 -- telescope keybindings
