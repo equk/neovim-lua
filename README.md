@@ -12,12 +12,15 @@ Testing neovim 0.5 features
 
 - [x] Plugins Managed Using Packer
 - [x] Packer Installer
-- [x] Telescope + ripgrep Fuzze Finder
-- [x] Neovim LSP
-- [x] Language Specific LSP (`Go`, `Javascript`, `Typescript`, `Rust`, `lua`)
-- [x] LSP, Snippet + Buffer Completion
+- [x] Telescope Fuzzy Finder
+- [x] Neovim LSP Client
+- [x] Language Specific LSP (`Go`, `Javascript`, `Typescript`, `Rust`, `lua`, `vue`)
+- [x] Code Completion (`buffer`, `lsp`, `snippets`)
 - [x] Treesitter Syntax Highlighting
 - [x] Linter On Save using ALE (`Go`, `Javascript`, `Typescript`, `Rust`, `lua`)
+- [x] Buffer Status (Changed, Unsaved, LSP)
+- [x] Line Git Status
+- [x] Git Diff Viewer
 
 ## TODO
 
